@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Create Account - Shortify</title>
+
+<link rel="icon"
+href="assets/favicon.ico">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/auth.css">
+
+<script src="/js/supabase.js"></script>
+<script src="/js/auth.js"></script>
+
+</head>
+
+<body>
+
+<div class="auth-container">
+
+
+<!-- Left Side -->
+
+<div class="auth-left">
+
+    <div class="brand">
+
+        <h1>Shortify</h1>
+
+        <p>
+
+            Create secure short links,
+            track analytics and manage
+            everything from one dashboard.
+
+        </p>
+
+    </div>
+
+    <div class="feature-list">
+
+        <div class="feature-item">
+
+            <span>🔗</span>
+
+            <p>Custom Short URLs</p>
+
+        </div>
+
+        <div class="feature-item">
+
+            <span>🔒</span>
+
+            <p>Password Protection</p>
+
+        </div>
+
+        <div class="feature-item">
+
+            <span>📊</span>
+
+            <p>Advanced Analytics</p>
+
+        </div>
+
+        <div class="feature-item">
+
+            <span>⚡</span>
+
+            <p>Fast Redirects</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Right Side -->
+
+<div class="auth-right">
+
+    <div class="auth-card">
+
+        <div class="auth-header">
+
+            <h2>Create Account</h2>
+
+            <p>
+
+                Start shortening your
+                URLs today.
+
+            </p>
+
+        </div>
+
+        <form
+        id="signupForm">
+
+            <div class="input-group">
+
+                <label>
+
+                    Username
+
+                </label>
+
+                <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Email Address
+
+                </label>
+
+                <input
+                type="email"
+                id="email"
+                placeholder="Enter email"
+                required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Password
+
+                </label>
+
+                <input
+                type="password"
+                id="password"
+                placeholder="Create password"
+                required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Confirm Password
+
+                </label>
+
+                <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                required>
+
+            </div>
+
+            <button
+            type="submit"
+            class="auth-btn">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+        <div class="auth-footer">
+
+            Already have an account?
+
+           <a href="/login.html">Sign In</a>
+
+        </div>
+
+        <div
+        id="message"
+        class="message-box">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase.js"></script>
+<script src="/js/auth.js"></script>
+
+</body>
+
+</html>

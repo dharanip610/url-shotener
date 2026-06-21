@@ -1,0 +1,324 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Shortify Dashboard</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link rel="stylesheet"
+href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+ 
+<!-- Sidebar -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-logo">
+        Shortify
+    </div>
+
+    <nav class="sidebar-menu">
+
+        <a href="#" class="active">
+            Dashboard
+        </a>
+
+        <a href="#">
+            My URLs
+        </a>
+
+        <a href="#">
+            Analytics
+        </a>
+
+        <a href="#">
+            Settings
+        </a>
+
+        <a href="#">
+            Logout
+        </a>
+
+    </nav>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="main-content">
+
+    <!-- Mobile Header -->
+
+    <div class="mobile-header">
+
+        <button id="menuBtn">
+            ☰
+        </button>
+
+        <h3>Shortify</h3>
+
+    </div>
+
+    <!-- Page Title -->
+
+    <h1 class="page-title">
+        Dashboard
+    </h1>
+
+    <!-- Analytics Cards -->
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+
+            <h4>Total URLs</h4>
+
+            <h2 id="totalUrls">
+                0
+            </h2>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h4>Active URLs</h4>
+
+            <h2 id="activeUrls">
+                0
+            </h2>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h4>Expired URLs</h4>
+
+            <h2 id="expiredUrls">
+                0
+            </h2>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h4>Protected URLs</h4>
+
+            <h2 id="protectedUrls">
+                0
+            </h2>
+
+        </div>
+
+    </div>
+
+    <!-- URL Form -->
+
+    <div class="url-box">
+
+        <h2>Create Short URL</h2>
+
+        <br>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>
+                    Long URL
+                </label>
+
+                <input
+                type="text"
+                id="longUrl"
+                placeholder="https://youtube.com/...">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Custom Code
+                </label>
+
+                <input
+                type="text"
+                id="customCode"
+                placeholder="my-link">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                type="password"
+                id="password">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Expiry Date
+                </label>
+
+                <input
+                type="date"
+                id="expiryDate">
+
+            </div>
+
+        </div>
+
+        <button
+id="generateBtn"
+class="generate-btn">
+
+    Generate URL
+
+</button>
+
+    </div>
+
+    <!-- URL Table -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Short URL
+                    </th>
+
+                    <th>
+                        Original URL
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Clicks
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="urlTable">
+
+                <tr>
+
+                    <td>
+                        shortify.com/demo
+                    </td>
+
+                    <td>
+                        youtube.com
+                    </td>
+
+                    <td>
+
+                        <span
+                        class="badge badge-active">
+
+                            Active
+
+                        </span>
+
+                    </td>
+
+                    <td>
+                        0
+                    </td>
+
+                    <td>
+
+                        <button
+                        class="action-btn copy-btn">
+
+                            Copy
+
+                        </button>
+
+                        <button
+                        class="action-btn delete-btn">
+
+                            Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+ 
+
+</div>
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sidebar =
+document.getElementById("sidebar");
+
+menuBtn.addEventListener(
+"click",
+()=>{
+
+sidebar.classList.toggle(
+"active"
+);
+
+}
+);
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Redirecting...</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<style>
+    .hidden{
+    display:none !important;
+}
+
+body{
+
+    margin:0;
+
+    font-family:'Poppins',sans-serif;
+
+    background:#F8FAFC;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+}
+
+.redirect-card{
+
+    width:90%;
+
+    max-width:450px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+}
+
+.logo{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#7C3AED;
+
+    margin-bottom:20px;
+}
+
+.status-icon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+}
+
+h2{
+
+    margin-bottom:10px;
+}
+
+p{
+
+    color:#6B7280;
+
+    margin-bottom:20px;
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    outline:none;
+}
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #7C3AED,
+    #A855F7
+    );
+}
+
+button:hover{
+
+    opacity:.95;
+}
+
+.hidden{
+
+    display:none;
+}
+.redirect-card{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+}
+
+#passwordSection{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+#passwordSection input{
+    max-width:350px;
+}
+
+#passwordSection button{
+    max-width:350px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="redirect-card">
+
+
+<div class="logo">
+
+    Shortify
+
+</div>
+<!-- Loading -->
+<!-- Loading -->
+<div id="loadingSection" class="hidden">
+
+    <div class="status-icon">
+        ⏳
+    </div>
+
+    <h2>Redirecting...</h2>
+
+    <p>
+        Please wait while we verify your link.
+    </p>
+
+</div>
+
+<!-- Password -->
+<div id="passwordSection" class="hidden">
+
+    <div class="status-icon">
+        🔒
+    </div>
+
+    <h2>Password Protected Link</h2>
+
+    <p>
+        Enter the password to continue
+    </p>
+
+    <input
+        type="password"
+        id="linkPassword"
+        placeholder="Enter password">
+
+    <button onclick="verifyPassword()">
+        Continue
+    </button>
+
+</div>
+<!-- Expired -->
+
+<div
+id="expiredSection"
+class="hidden">
+
+    <div class="status-icon">
+
+        ❌
+
+    </div>
+
+    <h2>
+
+        Link Expired
+
+    </h2>
+
+    <p>
+
+        This short URL
+        is no longer active.
+
+    </p>
+
+</div>
+
+<!-- Not Found -->
+
+<div
+id="notFoundSection"
+class="hidden">
+
+    <div class="status-icon">
+
+        ⚠️
+
+    </div>
+
+    <h2>
+
+        Link Not Found
+
+    </h2>
+
+    <p>
+
+        The requested URL
+        does not exist.
+
+    </p>
+
+</div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/redirect.js"></script>
+
+</body>
+
+</html>
