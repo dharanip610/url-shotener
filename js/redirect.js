@@ -78,47 +78,36 @@ params.get("code");
     // =====================
     // PASSWORD CHECK
     // =====================
+ // =====================
+// PASSWORD CHECK
+// =====================
 
-    if(
-        data.password &&
-        data.password !== ""
-    ){
+console.log("PASSWORD =", data.password);
 
-    // Hide loading card
-    document.getElementById("loadingSection")?.remove();
+if (
+    data.password &&
+    data.password.trim() !== "" &&
+    data.password !== "null"
+){
 
-    // Show password card
+    document
+    .getElementById("loadingSection")
+    ?.classList.add("hidden");
+
     document
     .getElementById("passwordSection")
-    .classList.remove("hidden");
+    ?.classList.remove("hidden");
 
     return;
-}{
+}
 
-        document
-        .getElementById(
-        "loadingSection"
-        )
-        .classList.add(
-        "hidden"
-        );
 
-        document
-        .getElementById(
-        "passwordSection"
-        )
-        .classList.remove(
-        "hidden"
-        );
-
-        return;
-    }
+redirectToURL();
+return;   
 
     // =====================
     // DIRECT REDIRECT
     // =====================
-
-    redirectToURL();
 
 }
 catch(err){

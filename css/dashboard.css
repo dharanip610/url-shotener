@@ -105,9 +105,11 @@ MAIN CONTENT
 ===================== */
 
 .main-content{
-flex:1;
-margin-left:260px;
-padding:30px;
+    flex:1;
+    margin-left:260px;
+    padding:30px;
+    width:calc(100% - 260px);
+    overflow-x:hidden;
 }
 
 .page-title{
@@ -256,81 +258,126 @@ rgba(124,58,237,.3);
 /* =====================
 TABLE
 ===================== */
-
-.table-wrapper{
-background:white;
-border-radius:20px;
-border:1px solid var(--border);
-overflow-x:auto;
-}
+/* =====================
+TABLE FIX
+===================== */
 
 table{
-width:100%;
-border-collapse:collapse;
-min-width:800px;
-}
-
-thead{
-background:#F3F4F6;
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
 }
 
 th{
-text-align:left;
-padding:16px;
-font-size:14px;
+    padding:14px;
+    font-size:14px;
+    font-weight:600;
 }
 
 td{
-padding:16px;
-border-top:1px solid var(--border);
+    padding:12px 14px;
+    vertical-align:middle;
 }
 
-tbody tr:hover
+/* URL column */
+td:nth-child(2){
+    max-width:350px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
 
-/* =====================
-BADGES
-===================== */
-
+/* Status badge */
 .badge{
-padding:6px 12px;
-border-radius:999px;
-font-size:12px;
-font-weight:600;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
 }
 
 .badge-active{
-background:#DCFCE7;
-color:#166534;
+    background:#DCFCE7;
+    color:#166534;
 }
 
 .badge-expired{
-background:#FEE2E2;
-color:#991B1B;
+    background:#FEE2E2;
+    color:#991B1B;
 }
 
 .badge-protected{
-background:#EDE9FE;
-color:#6D28D9;
+    background:#EDE9FE;
+    color:#6D28D9;
 }
 
-/* =====================
-ACTION BUTTONS
-===================== */
-
+/* Action buttons */
 .action-btn{
-border:none;
-cursor:pointer;
-padding:8px 12px;
-border-radius:8px;
-margin-right:5px;
+    border:none;
+    cursor:pointer;
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .copy-btn{
-background:#DCFCE7;
+    background:#7C3AED;
+    color:white;
+}
+
+.copy-btn:hover{
+    background:#5B21B6;
 }
 
 .delete-btn{
-background:#FEE2E2;
+    background:#EF4444;
+    color:white;
+}
+
+.delete-btn:hover{
+    background:#DC2626;
+}
+
+/* Actions column */
+td:last-child{
+    white-space:nowrap;
+}
+/* =====================
+TABLE
+===================== */
+
+.table-wrapper{
+    background:white;
+    border-radius:20px;
+    border:1px solid var(--border);
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:800px;
+}
+
+thead{
+    background:#F3F4F6;
+}
+
+th{
+    text-align:left;
+    padding:16px;
+    font-size:14px;
+}
+
+td{
+    padding:16px;
+    border-top:1px solid var(--border);
+    word-break:break-word;
+}
+
+tbody tr:hover{
+    background:#F9FAFB;
 }
 
 /* =====================
@@ -422,4 +469,22 @@ SMALL MOBILE
 }
 
 
+}
+.analytics-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+@media(max-width:1200px){
+    .analytics-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .analytics-grid{
+        grid-template-columns:1fr;
+    }
 }

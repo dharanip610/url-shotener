@@ -294,10 +294,10 @@ try{
 
     data.forEach(url=>{
 
-        let status =
-        `<span class="badge badge-active">
-        Active
-        </span>`;
+    let status =
+`<span class="badge badge-active">
+Active
+</span>`;
 
         if(
             url.expiry_date &&
@@ -306,9 +306,9 @@ try{
         ){
 
             status =
-            `<span class="badge badge-expired">
-            Expired
-            </span>`;
+`<span class="badge badge-expired">
+Expired
+</span>`;
 
         }
 

@@ -1,5 +1,11 @@
 console.log("AUTH LOADED");
-console.log("supabaseClient =", typeof supabaseClient);
+
+const supabaseClient = window.supabaseClient;
+
+console.log(
+    "supabaseClient =",
+    typeof supabaseClient
+);
 /* ===================================
 SHORTIFY AUTH.JS
 Signup + Login + Logout
@@ -127,7 +133,7 @@ try{
     const { error:userError } =
     await supabaseClient
     .from("users")
-    .insert([{
+    .upsert([{
 
         id:user.id,
 
@@ -152,7 +158,7 @@ try{
 
     showMessage(
 
-    "Account created successfully. Please verify your email.",
+    "Account created successfully! Redirecting to login...",
 
     "success"
 
@@ -163,6 +169,10 @@ try{
     "signupForm"
     )
     .reset();
+
+    setTimeout(() => {
+    window.location.href = "dashboard.html";
+}, 1000);
 
 }
 catch(err){
